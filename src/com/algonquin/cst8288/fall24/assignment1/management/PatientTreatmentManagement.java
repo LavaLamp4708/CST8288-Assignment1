@@ -1,5 +1,9 @@
 package com.algonquin.cst8288.fall24.assignment1.management;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import com.algonquin.cst8288.fall24.assignment1.management.*;
 import com.algonquin.cst8288.fall24.assignment1.patient.*;
 import com.algonquin.cst8288.fall24.assignment1.treatment.*;

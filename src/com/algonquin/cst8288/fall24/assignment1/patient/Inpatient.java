@@ -14,8 +14,7 @@ public class Inpatient extends Patient {
     }
     
 
-	@Override
-	public void admit() {
+	public void admit() { 				//no longer needs to be overridden.
 		System.out.println(getName() + " has been admitted to " + getRoomNumber());
 		
 	}

@@ -104,8 +104,8 @@ public abstract class Patient {
 	public void setPlannedTreatment(String plannedTreatment) {
 		this.plannedTreatment = plannedTreatment;
 	}
-
-	public abstract void admit();
+	//to abide by lsp, I will forgo declaring the admit() method as abstract here
+	//public abstract void admit();
 
     
 }
