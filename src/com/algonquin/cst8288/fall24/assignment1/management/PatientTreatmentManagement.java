@@ -15,11 +15,14 @@ public class PatientTreatmentManagement {
 	 * 
 	 * @param patient
 	 */
-	public void createTreatmentPlan(Patient patient){
-		PatientAgeManagement age = new PatientAgeManagement();
-		TreatmentPlan treatment = new SurgeryTreatmentPlan();
-		patient.setAge(age.calulatePatientAge(patient.getDateOfBirth()));
-		patient.setLifeStage(age.determineLifeStage(patient.getAge()));
+	public void createTreatmentPlan(Patient patient, TreatmentPlan treatment){
+		//I understand that this instant of PatientAgeManagement is not loosely coupled.
+		//I had to make this part to abide by srp.
+		//Since there are no other types of "AgeManagement" classes, this shouldn't be a problem.
+		PatientAgeManagement ageManagement = new PatientAgeManagement();
+		//TreatmentPlan treatment = new SurgeryTreatmentPlan();
+		patient.setAge(ageManagement.calulatePatientAge(patient.getDateOfBirth()));
+		patient.setLifeStage(ageManagement.determineLifeStage(patient.getAge()));
 		treatment.createTreatmentPlan(patient);
 		
 	}
@@ -32,8 +35,8 @@ public class PatientTreatmentManagement {
 	 * @param filename
 	 * @throws IOException
 	 */
-	public void generatePrescription(Patient patient, String filename) throws IOException {
-		PrescriptionService prescriptionService = new OnlinePrescriptionService();
+	public void generatePrescription(Patient patient, String filename, PrescriptionService prescriptionService) throws IOException {
+		//PrescriptionService prescriptionService = new OnlinePrescriptionService();
 		BufferedWriter bwriter;
 		bwriter = new BufferedWriter(new FileWriter(filename));	
 		bwriter.write(prescriptionService.generatePrescription(patient));
