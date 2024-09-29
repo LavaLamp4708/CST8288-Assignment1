@@ -30,7 +30,6 @@ public abstract class Patient {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
-       
     }
 
     public String getId() {
@@ -88,7 +87,7 @@ public abstract class Patient {
 	public void setLifeStage(String lifeStage) {
 		this.lifeStage = lifeStage;
 	}
-
+	
 	public Prescription getPrescription() {
 		return prescription;
 	}
