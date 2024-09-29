@@ -2,6 +2,9 @@ package com.algonquin.cst8288.fall24.assignment1.prescription;
 
 import java.util.Date;
 
+import com.algonquin.cst8288.fall24.assignment1.treatment.MedicationTreatmentPlan;
+import com.algonquin.cst8288.fall24.assignment1.treatment.SurgeryTreatmentPlan;
+
 /**
  * 
  * Calculate the details of the prescription according to the business rules.
@@ -21,9 +24,11 @@ public class Prescription {
 	String riskFactor;
 	boolean isFastingRequired;
 	Date followUpDate;
+	MedicationTreatmentPlan mtp;
+	SurgeryTreatmentPlan stp;
 	// Add any other required attributes
 
-	public Prescription() {
+	public Prescription(MedicationTreatmentPlan mtp, SurgeryTreatmentPlan stp) {
 		
 	}
 	

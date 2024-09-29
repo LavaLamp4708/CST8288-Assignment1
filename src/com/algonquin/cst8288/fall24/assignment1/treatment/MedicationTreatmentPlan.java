@@ -71,7 +71,7 @@ public class MedicationTreatmentPlan implements TreatmentPlan {
 	public void setSeverity(String severity) {
 		if(severity == Constants.ACUTE ||
 				severity == Constants.INFECTION ||
-						severity == Constants.CHRONIC) {
+				severity == Constants.CHRONIC) {
 			this.severity = severity;
 		} else {
 			throw new IllegalArgumentException("Input invalid");

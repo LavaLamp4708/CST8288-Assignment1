@@ -15,7 +15,7 @@ public class PatientTreatmentManagement {
 	 * 
 	 * @param patient
 	 */
-	public void createTreatmentPlan(Patient patient, TreatmentPlan treatment){
+	public String createTreatmentPlan(Patient patient, TreatmentPlan treatment){
 		//I understand that this instant of PatientAgeManagement is not loosely coupled.
 		//I had to make this part to abide by srp.
 		//Since there are no other types of "AgeManagement" classes, this shouldn't be a problem.
@@ -23,7 +23,7 @@ public class PatientTreatmentManagement {
 		//TreatmentPlan treatment = new SurgeryTreatmentPlan();
 		patient.setAge(ageManagement.calulatePatientAge(patient.getDateOfBirth()));
 		patient.setLifeStage(ageManagement.determineLifeStage(patient.getAge()));
-		treatment.createTreatmentPlan(patient);
+		return treatment.createTreatmentPlan(patient);
 		
 	}
 
